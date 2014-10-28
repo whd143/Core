@@ -1,0 +1,49 @@
+<?php
+session_start();
+
+function getBaseURI() {
+    return sprintf(
+            "%s://%s", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http', $_SERVER['SERVER_NAME']
+    );
+}
+
+$base_url = getBaseURI() . '/admin';
+/**
+ * Error / Notice Settings
+ */
+if (strstr($base_url, 'local') != FALSE) { // local server
+    error_reporting(E_ALL); // & ~E_NOTICE & ~ E_WARNING
+    ini_set('display_errors', 'On');
+}
+
+/**
+ * Database connection settings
+ */
+if (strstr($base_url, 'local') == FALSE) { // live server settings
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $db_name = '';
+} else { //local server settings
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $db_name = 'stopng';
+}
+
+$sql = new mysqli($host, $user, $password, $db_name);
+if ($sql->connect_errno > 0) {
+    die('Unable to connect to database [' . $sql->connect_error . ']');
+}
+
+/**
+ * Dump sql errors 
+ */
+function dumpSql($msg) {
+    global $base_url;
+    if (strstr($base_url, 'local') != FALSE) { // local server
+        exit($msg);
+    } else {
+        exit('Apologize..Our website is temporarily down, please visit later:(');
+    }
+}

@@ -1,0 +1,10 @@
+[09-Oct-2014 05:06:24 America/Denver] PHP Fatal error:  Cannot use [] for reading in /home1/demobizt/public_html/php/GroundOutGloves/proces.php on line 57
+[09-Oct-2014 05:39:22 America/Denver] PHP Fatal error:  Can't use method return value in write context in /home1/demobizt/public_html/php/GroundOutGloves/proces.php on line 61
+[13-Oct-2014 04:40:04 America/Denver] PHP Parse error:  syntax error, unexpected '.' in /home1/demobizt/public_html/php/GroundOutGloves/proces.php on line 214
+[13-Oct-2014 04:41:05 America/Denver] PHP Parse error:  syntax error, unexpected end of file in /home1/demobizt/public_html/php/GroundOutGloves/proces.php on line 467
+[13-Oct-2014 07:22:19 America/Denver] PHP Parse error:  syntax error, unexpected '<' in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 231
+[13-Oct-2014 23:50:57 America/Denver] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 722
+[13-Oct-2014 23:57:25 America/Denver] PHP Parse error:  syntax error, unexpected ''</td>' (T_ENCAPSED_AND_WHITESPACE) in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 827
+[14-Oct-2014 00:44:24 America/Denver] PHP Parse error:  syntax error, unexpected ''<tabl' (T_ENCAPSED_AND_WHITESPACE) in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 500
+[14-Oct-2014 23:20:48 America/Denver] PHP Parse error:  syntax error, unexpected ''</td>' (T_ENCAPSED_AND_WHITESPACE) in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 1011
+[14-Oct-2014 23:23:44 America/Denver] PHP Parse error:  syntax error, unexpected end of file in /home1/demobizt/public_html/php/GroundOutGloves/creditcard.php on line 307

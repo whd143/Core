@@ -1,0 +1,5 @@
+function RefreshProducts() {
+            ShowProcessing('#divProducts');
+            $.get('@Url.Action("LoadProducts", "Products")?categoryId=' + $("#ddlProductCategories").val() + '&artistId=' + $("#ddlArtists").val(), function(data) { $('#divProducts').html(data); });
+            HideProcessing('#divProducts');
+        }

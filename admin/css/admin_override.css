@@ -1,0 +1,41 @@
+
+
+.text-align-left{
+    text-align:left;
+}
+
+.text-align-center{
+    text-align:center;
+}
+
+.pl20{
+    padding-left:20px;
+}
+
+.width20{
+    width: 20%;    
+}
+
+.width60{
+    width: 60%;    
+}
+.width80{
+    width:80%;
+}
+.height60{
+    height:60px;
+}
+.float-right{
+    float:right;
+}
+
+table.dataTable.no-footer {
+    border: 1px solid transparent;
+}
+table.dataTable thead th{
+    border-top: 1px solid #C7C7C7;
+}
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid #C7C7C7;
+    
+}

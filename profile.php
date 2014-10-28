@@ -1,0 +1,116 @@
+<?php include "includes/header.php"; 
+error_reporting(0);
+$id=$_REQUEST['member_id'];
+?>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('form').validationEngine({ promptPosition: "bottomLeft", scroll: false });
+		//{promptPosition : "centerRight", scroll: false}
+	});
+</script>
+</div><!--header-->
+	<div class="clear"></div><!--clear-->
+    	<div class="main_body">
+        	<div class="mission_bar">
+            	
+                <div class="container">
+                	<p>Our Mission is to ...</p>
+                    <a href="#create_glove" class="fancybox">Create a Glove</a>
+                    <div id="create_glove" style="display:none">
+                     <?php 
+						$queryinstrct=mysql_query('SELECT * FROM gloves_instructions WHERE glov_instr_id="1"');
+						$resultinstrct=mysql_fetch_array($queryinstrct);
+					?>
+                    <h3><?php echo $resultinstrct['title'];  ?></h3>
+                    <?php echo $resultinstrct['description'];  ?>
+                    <a href="design_glove.php">Continue</a>
+                    </div><!--create_glove-->
+                </div>
+                
+            </div><!--mission_bar-->
+                <div class="clear"></div><!--clear-->
+                	<div class="container">
+                        <div class="main_content">
+                        	<div class="about_content">
+                            	<h2>Edit your profile</h2>
+                                <div id="login-fun-bg">
+                                	<div class="login-fun">
+                                    	
+                                        <?php
+										
+											if(isset($_REQUEST['submit']))
+											{
+												
+												$name=$_REQUEST['name'];
+												$lastname=$_REQUEST['lastname'];
+												$password=$_REQUEST['password'];
+												$conf_password=$_REQUEST['conf_password'];
+												$email=$_REQUEST['email'];
+												$phone=$_REQUEST['phone'];
+												
+												
+												if($password!=$conf_password)
+
+												{
+										
+														?>
+									
+														<p style="padding-top:10px;color:red;">
+									
+														<?php
+									
+														echo "Passwords do not match...";
+									
+														?>
+									
+														</p>
+									
+														<?php
+										
+												}
+												
+												else
+												{
+													mysql_query('UPDATE members SET name="'.$name.'", last_name="'.$lastname.'", password="'.$password.'", phone="'.$phone.'",  email="'.$email.'" WHERE id="'.$member_id.'"');
+													?>
+                                                    
+                                                    <p style="padding-top:10px;color:green;">
+                                                  		Your information has been successfully updated...
+                                                    </p>
+                                                    <?php
+													unset($_SESSION['user']);
+													?>
+													 <script type="text/javaScript">
+														setTimeout("location.href = '<?php echo $base_url; ?>';", 1500);
+													</script> 
+                                                    <?php
+                                                }
+											}
+										?>
+                                        
+                                        <?php   
+										$result = mysql_query('SELECT * FROM members WHERE id="'.$member_id.'"'); 
+										$entry = mysql_fetch_array($result)
+										?>
+                                        <form action="" id="register">
+	                                        <input type="text" placeholder="First Name" name="name" id="name" class="validate[required,custom[onlyLetterNumberHyphen]]" value="<?php echo $entry['name']; ?>" />
+	                                        <input type="text" placeholder="Last Name" name="lastname" id="lastname" class="validate[required,custom[onlyLetterNumberHyphen]]" value="<?php echo $entry['last_name']; ?>" />
+	                                        <input type="password" placeholder="Password" name="password" id="password" class="validate[required]" value="<?php echo $entry['password']; ?>" />
+	                                        <input type="password" placeholder="Confirm Password" name="conf_password" id="conf_password" class="validate[required]" value="<?php echo $entry['password']; ?>" />
+	                                        <input type="text" placeholder="Email" name="email" id="email" class="validate[required,custom[email]]" value="<?php echo $entry['email']; ?>" />
+                                            <input type="text" placeholder="Phone No" name="phone" id="phone" class="validate[required,custom[number]]" value="<?php echo $entry['phone']; ?>" />
+                                            <input type="submit" name="submit" id="submit" value="Register">
+    									</form>                                    
+                                    </div>
+                                </div>
+                                
+                            
+                          </div><!--about_content-->
+						<div class="clear"></div><!--clear-->
+					
+</div><!--main_content-->
+    </div><!--container-->
+        </div><!--main_body-->
+        	<div class="clear"></div><!--clear-->
+
+<?php include "includes/footer.php"; 
