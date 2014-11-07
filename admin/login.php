@@ -12,7 +12,7 @@ $password = isset($_REQUEST['password']) ? $_REQUEST['password'] : NULL;
  */
 $query = <<<HDOC
     SELECT *
-        FROM `login` 
+        FROM `admin` 
         WHERE `username` = '{$sql->real_escape_string($username)}'
         AND `password` =  MD5('$password')
 HDOC;
@@ -24,7 +24,7 @@ if ($result->num_rows) {
      * storing record details into session
      */
     $record = $result->fetch_object();
-    $_SESSION["id"] = $record->id;
+    $_SESSION["id"] = $record->admin_id;
     $_SESSION["name"] = $record->name;
     $_SESSION["username"] = $record->username;
     $_SESSION["email"] = $record->email;

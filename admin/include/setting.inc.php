@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+
+const CSS_PATH = '';
+
+
 function getBaseURI() {
     return sprintf(
             "%s://%s", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http', $_SERVER['SERVER_NAME']
@@ -25,12 +29,14 @@ if (strstr($base_url, 'local') == FALSE) { // live server settings
     $password = '';
     $db_name = '';
 } else { //local server settings
-    $host = 'localhost';
+    $host = '127.0.0.1';
     $user = 'root';
-    $password = '';
-    $db_name = 'stopng';
+    $password = 'secret';
+    $db_name = 'deenoduniya';
 }
 
+//echo $host.' - '.$user.' - '.$password.' - '.$db_name;
+//exit;
 $sql = new mysqli($host, $user, $password, $db_name);
 if ($sql->connect_errno > 0) {
     die('Unable to connect to database [' . $sql->connect_error . ']');

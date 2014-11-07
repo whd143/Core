@@ -29,6 +29,10 @@
     float:right;
 }
 
+.input-xlarge{
+    width:765px;
+}
+
 table.dataTable.no-footer {
     border: 1px solid transparent;
 }

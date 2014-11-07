@@ -1,8 +1,12 @@
 <?php
-require_once "include/setting.inc.php";
-require_once "include/validate_session.php";
 ob_start();
-
+if (isset($include_prefix)) {
+    require_once $include_prefix . 'include/setting.inc.php';
+    require_once $include_prefix . 'include/validate_session.php';
+} else {
+    require_once 'include/setting.inc.php';
+    require_once 'include/validate_session.php';
+}
 //if (isset($_REQUEST['slider']) && $_REQUEST['slider'] == 'del') {
 //    $id = $_REQUEST['id'];
 //    mysql_query("DELETE FROM slider WHERE slider_id='$id'");
@@ -36,23 +40,23 @@ ob_start();
         <meta name="author" content="" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <link href="./css/bootstrap.min.css" rel="stylesheet" />
-        <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="./css/jasny-bootstrap.min.css" rel="stylesheet" />
-        <link href="./css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="./css/font-awesome.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/jasny-bootstrap.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/font-awesome.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-        <link href="./css/admin.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/css/admin.css" rel="stylesheet" />
         <link class="jsbin" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-        
+
         <!--  validation -->
-        <link rel="stylesheet" type="text/css" href="./css/validationEngine.jquery.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/validationEngine.jquery.css" />
         <!-- datatables -->
         <link href="//cdn.datatables.net/1.10.3/css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
-        
-        <link href="./css/admin_override.css" rel="stylesheet" />
 
-        
+        <link href="<?php echo $base_url ?>/css/admin_override.css" rel="stylesheet" />
+
+
 
 <!--        <script type="text/javascript">
 
@@ -176,14 +180,11 @@ ob_start();
                         <div class="pull-right">
                             <?php
                             if (isset($_SESSION["name"])) {
-                                ?>
-
-                                <span style="font-size:12px;">Welcome <?php echo $_SESSION['name']; ?></span>
-                                <?php
+                                echo '<span style="font-size:12px;">Welcome ' . $_SESSION['name'] . '</span>';
                             }
                             ?>
                             |
-                            <a href="logout.php">Sign Out</a>
+                            <a href="<?php echo $base_url?>/logout.php">Sign Out</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +196,7 @@ ob_start();
                 <div class="row">
                     <div class="span12">
                         <div class="logo">
-                            <img src="../images/logo.png" alt="Stop ng logo" >
+                            <img src="<?php echo $base_url ?>/images/logo.png" alt="Logo" >
                         </div>
                     </div>
                 </div>
@@ -212,7 +213,13 @@ ob_start();
                             <div class="navbar-inner">
                                 <div class="container">
                                     <div class="nav-collapse">
-                                        <?php include 'include/menu.inc.php'; ?>
+                                        <?php
+                                        if (isset($include_prefix)) {
+                                            include $include_prefix . 'include/menu.inc.php';
+                                        } else {
+                                            include 'include/menu.inc.php';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
