@@ -1,5 +1,5 @@
 <?php
-$include_prefix = '../';
+$include_prefix = '../../';
 include $include_prefix . "include/header.inc.php";
 
 
@@ -7,24 +7,22 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $page_id = isset($_POST['page_id']) ? $_POST['page_id'] : 0;
+    $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : 0;
     $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
     $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : '';
-    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : '';
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
-    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : '';
+    $show_as_menu = isset($_POST['show_as_menu']) ? $_POST['show_as_menu'] : 1;
     $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
     $query = <<<HDOC
-                    UPDATE  `static_page` 
+                    UPDATE  `category` 
                     SET 
                         `slug`  = '{$sql->real_escape_string($slug)}',
                         `title_en` =  '{$sql->real_escape_string($title_en)}',
-                        `description_en` =  '{$sql->real_escape_string($description_en)}',
                         `title_ur` =  '{$sql->real_escape_string($title_ur)}',
-                        `description_ur` =  '{$sql->real_escape_string($description_ur)}',
+                        `show_as_menu` =  '{$sql->real_escape_string($show_as_menu)}',
                         `is_active` =  '{$sql->real_escape_string($is_active)}',
                         `modified_by` =  '{$_SESSION['id']}'  
-                    WHERE `page_id`  = '{$sql->real_escape_string($page_id)}'
+                    WHERE `category_id`  = '{$sql->real_escape_string($category_id)}'
 HDOC;
     if ($sql->query($query) == FALSE) {
         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
@@ -32,8 +30,8 @@ HDOC;
     $_SESSION['success_message'] = ' Record has been updated successfully.';
     header('LOCATION: index.php');
 } else {
-    $page_id = isset($_GET['page_id']) ? $_GET['page_id'] : NULL;
-    if (is_null($page_id)) {
+    $category_id = isset($_GET['category_id']) ? $_GET['category_id'] : NULL;
+    if (is_null($category_id)) {
         header('LOCATION: index.php');
     }
 }
@@ -44,13 +42,13 @@ HDOC;
             <div class="span12">
 
                 <div class="panel">
-                    <div class="panel-header"><i class="icon-tasks"></i> Static Pages Management</div>
+                    <div class="panel-header"><i class="icon-tasks"></i> Categories Management</div>
                     <div class="panel-content">
                         <?php
                         $query = <<<HDOC
                                 SELECT * 
-                                FROM `static_page` 
-                                WHERE `page_id`= '{$sql->real_escape_string($page_id)}'
+                                FROM `category` 
+                                WHERE `category_id`= '{$sql->real_escape_string($category_id)}'
 HDOC;
                         if (!$result = $sql->query($query)) {
                             dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
@@ -60,7 +58,7 @@ HDOC;
                             $record = $result->fetch_object();
                             ?>
                             <form id="frm" name="frm" action="" method="post" enctype="multipart/form-data" class="form-horizontal" >
-                                <input type="hidden" id="page_id" name="page_id" value="<?php echo $record->page_id; ?>" />
+                                <input type="hidden" id="category_id" name="category_id" value="<?php echo $record->category_id; ?>" />
 
                                 <fieldset>
 
@@ -82,15 +80,6 @@ HDOC;
                                         </div>
                                     </div>
 
-
-                                    <div class="control-group">
-                                        <label class="control-label" for="description_ur">Description (UR) :</label>
-                                        <div class="controls">
-                                            <textarea id="description_ur" name="description_ur" title="Enter page description in ur" rows="15" cols="80" style="width: 80%" class="tinymce"><?php echo $record->description_ur ?></textarea>
-                                        </div>
-                                    </div>
-
-
                                     <div class="control-group">
                                         <label class="control-label" for="title_en">Title (EN) : </label>
                                         <div class="controls">
@@ -99,11 +88,12 @@ HDOC;
                                         </div>
                                     </div>
 
-
                                     <div class="control-group">
-                                        <label class="control-label" for="description_en">Description (EN) :</label>
+                                        <label class="control-label" for="email">Show In Menu :</label>
                                         <div class="controls">
-                                            <textarea id="description_en" name="description_en" title="Enter page description in english" rows="15" cols="80" style="width: 80%" class="tinymce" ><?php echo $record->description_en ?></textarea>
+                                            <input type="radio" id="show_as_menu1" name="show_as_menu" <?php echo ($record->show_as_menu == 1) ? 'checked' : ''; ?> value="1" />&nbsp;Yes 
+                                            <br />
+                                            <input type="radio" id="show_as_menu0" name="show_as_menu" <?php echo ($record->show_as_menu == 0) ? 'checked' : ''; ?>  value="0" />&nbsp;No
                                         </div>
                                     </div>
 
@@ -118,7 +108,7 @@ HDOC;
 
                                     <div class="form-actions">
                                         <button type="submit" class="btn btn-success" title="Click to update existing record" id="submit" name="submit">Update</button>
-                                        <a href="<?php echo $base_url; ?>/static_pages">Cancel</a>
+                                        <a href="<?php echo $base_url; ?>/article/categories">Cancel</a>
                                     </div>
 
                                 </fieldset>
