@@ -5,19 +5,20 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : '';
-    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : '';
+    $slug = isset($_POST['slug']) ? $_POST['slug'] : null;
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : null;
+    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : null;
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
-    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : '';
+    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : null;
     $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
     $is_home = isset($_POST['is_home']) ? $_POST['is_home'] : 1;
     $is_featured = isset($_POST['is_featured']) ? $_POST['is_featured'] : 1;
     $display_order = isset($_POST['display_order']) ? $_POST['display_order'] : 0;
     $publish_on = date('Y-m-d', isset($_POST['publish_on']) ? strtotime($_POST['publish_on']) : time());
+    $video_url = isset($_POST['video_url']) ? $_POST['video_url'] : null;
     $query = <<<HDOC
-                    INSERT INTO  `article` (`slug`,`title_en`,`description_en`,`title_ur`,`description_ur`,`publish_on`,`is_featured`,`is_home`,`is_active`,`created_by`,`modified_by`,`created_on`) 
-                    VALUES('{$sql->real_escape_string($slug)}','{$sql->real_escape_string($title_en)}','{$sql->real_escape_string($description_en)}','{$sql->real_escape_string($title_ur)}','{$sql->real_escape_string($description_ur)}','{$sql->real_escape_string($publish_on)}','{$sql->real_escape_string($is_featured)}','{$sql->real_escape_string($is_home)}','{$sql->real_escape_string($is_active)}','{$_SESSION['id']}','{$_SESSION['id']}',NOW()) 
+                    INSERT INTO  `article` (`slug`,`title_en`,`description_en`,`title_ur`,`description_ur`,`publish_on`,`video_url`,`is_featured`,`is_home`,`is_active`,`created_by`,`modified_by`,`created_on`) 
+                    VALUES('{$sql->real_escape_string($slug)}','{$sql->real_escape_string($title_en)}','{$sql->real_escape_string($description_en)}','{$sql->real_escape_string($title_ur)}','{$sql->real_escape_string($description_ur)}','{$sql->real_escape_string($publish_on)}','{$sql->real_escape_string($video_url)}','{$sql->real_escape_string($is_featured)}','{$sql->real_escape_string($is_home)}','{$sql->real_escape_string($is_active)}','{$_SESSION['id']}','{$_SESSION['id']}',NOW()) 
 HDOC;
     if ($sql->query($query) == FALSE) {
         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
@@ -84,6 +85,14 @@ HDOC;
                                     <label class="control-label" for="description_en">Description (EN) :</label>
                                     <div class="controls">
                                         <textarea id="description_en" name="description_en" title="Enter article description in english" rows="15" cols="80" style="width: 80%" class="tinymce" ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="video_url">Video Url : </label>
+                                    <div class="controls">
+                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article video_url" id="video_url" name="video_url" value="" maxlength="11" />
+                                        <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 

@@ -1,9 +1,9 @@
 <?php
+
 session_start();
 
 
-const CSS_PATH = '';
-
+        const CSS_PATH = '';
 
 function getBaseURI() {
     return sprintf(
@@ -51,5 +51,21 @@ function dumpSql($msg) {
         exit($msg);
     } else {
         exit('Apologize..Our website is temporarily down, please visit later:(');
+    }
+}
+
+/**
+ * 
+ * @param string $mime_type
+ * @return string
+ */
+function retrieveFileExtension($mime_type) {
+    switch ($mime_type) {
+        case "image/png": return '.png';
+            break;
+        case "image/jpeg":
+        case "image/jpg":
+            return '.jpg';
+            break;
     }
 }

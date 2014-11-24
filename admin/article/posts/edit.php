@@ -8,17 +8,17 @@ include $include_prefix . "include/header.inc.php";
  */
 if (isset($_POST['submit'])) {
     $article_id = isset($_POST['article_id']) ? $_POST['article_id'] : 0;
-    $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : '';
-    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : '';
+    $slug = isset($_POST['slug']) ? $_POST['slug'] : null;
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : null;
+    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : null;
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
-    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : '';
+    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : null;
     $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
     $is_home = isset($_POST['is_home']) ? $_POST['is_home'] : 1;
     $is_featured = isset($_POST['is_featured']) ? $_POST['is_featured'] : 1;
     $display_order = isset($_POST['display_order']) ? $_POST['display_order'] : 0;
     $publish_on = date('Y-m-d', isset($_POST['publish_on']) ? strtotime($_POST['publish_on']) : time());
-
+    $video_url = isset($_POST['video_url']) ? $_POST['video_url'] : null;
     $query = <<<HDOC
                     UPDATE  `article` 
                     SET 
@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
                         `is_home` =  '{$sql->real_escape_string($is_home)}',
                         `is_featured` =  '{$sql->real_escape_string($is_featured)}',
                         `publish_on` =  '{$sql->real_escape_string($publish_on)}',
+                        `video_url` =  '{$sql->real_escape_string($video_url)}',
                         `modified_by` =  '{$_SESSION['id']}'  
                     WHERE `article_id`  = '{$sql->real_escape_string($article_id)}'
 HDOC;
@@ -89,7 +90,7 @@ HDOC;
                                             <span style="color:red;"> * </span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group">
                                         <label class="control-label" for="title_ur">Title (UR) : </label>
                                         <div class="controls">
@@ -98,14 +99,12 @@ HDOC;
                                         </div>
                                     </div>
 
-
                                     <div class="control-group">
                                         <label class="control-label" for="description_ur">Description (UR) :</label>
                                         <div class="controls">
                                             <textarea id="description_ur" name="description_ur" title="Enter article description in ur" rows="15" cols="80" style="width: 80%" class="tinymce"><?php echo $record->description_ur ?></textarea>
                                         </div>
                                     </div>
-
 
                                     <div class="control-group">
                                         <label class="control-label" for="title_en">Title (EN) : </label>
@@ -115,11 +114,18 @@ HDOC;
                                         </div>
                                     </div>
 
-
                                     <div class="control-group">
                                         <label class="control-label" for="description_en">Description (EN) :</label>
                                         <div class="controls">
                                             <textarea id="description_en" name="description_en" title="Enter article description in english" rows="15" cols="80" style="width: 80%" class="tinymce" ><?php echo $record->description_en ?></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="video_url">Video Url : </label>
+                                        <div class="controls">
+                                            <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article video_url" id="video_url" name="video_url" value="<?php echo $record->video_url; ?>" maxlength="11" />
+                                            <span style="color:red;"> * </span>
                                         </div>
                                     </div>
 
@@ -130,7 +136,7 @@ HDOC;
                                             <span style="color:red;"> * </span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group">
                                         <label class="control-label" for="is_home">Front Page Display:</label>
                                         <div class="controls">
@@ -139,7 +145,7 @@ HDOC;
                                             <input type="radio" id="inactive" name="is_home" <?php echo ($record->is_home == 0) ? 'checked' : ''; ?>  value="0" />&nbsp;No
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group">
                                         <label class="control-label" for="is_featured">Is Featured:</label>
                                         <div class="controls">
@@ -148,17 +154,7 @@ HDOC;
                                             <input type="radio" id="inactive" name="is_featured" <?php echo ($record->is_featured == 0) ? 'checked' : ''; ?>  value="0" />&nbsp;No
                                         </div>
                                     </div>
-                                    
-                                    <div class="control-group">
-                                        <label class="control-label" for="is_active">Status :</label>
-                                        <div class="controls">
-                                            <input type="radio" id="active" name="is_active" <?php echo ($record->is_active == 1) ? 'checked' : ''; ?> value="1" />&nbsp;Active 
-                                            <br />
-                                            <input type="radio" id="inactive" name="is_active" <?php echo ($record->is_active == 0) ? 'checked' : ''; ?>  value="0" />&nbsp;Inactive
-                                        </div>
-                                    </div>
-                                    
-                                    
+
                                     <div class="control-group">
                                         <label class="control-label" for="is_active">Status :</label>
                                         <div class="controls">
