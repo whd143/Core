@@ -16,16 +16,6 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<!-- Integrated and applied validation library -->
-<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
-<script type="text/javascript" src="js/jquery.validationEngine-en.js"></script>
-
-<!-- Load TinyMCE -->
-<script type="text/javascript" src="tinymce/jquery.tinymce.js"></script>
-
-<!-- datatables -->
-<script src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js" ></script>
-<script src="js/override.js"></script>
 
 </body>
 </html>

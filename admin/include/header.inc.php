@@ -19,19 +19,15 @@ if (isset($include_prefix)) {
         <meta name="author" content="" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <link href="<?php echo $base_url ?>/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="<?php echo $base_url ?>/css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="<?php echo $base_url ?>/css/jasny-bootstrap.min.css" rel="stylesheet" />
-        <link href="<?php echo $base_url ?>/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="<?php echo $base_url ?>/css/font-awesome.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/font-awesome.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-        <link href="<?php echo $base_url ?>/css/admin.css" rel="stylesheet" />
-        <link class="jsbin" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-        <!--  validation -->
-        <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/validationEngine.jquery.css" />
-        <!-- datatables -->
-        <link href="//cdn.datatables.net/1.10.3/css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
-        <link href="<?php echo $base_url ?>/css/admin_override.css" rel="stylesheet" />
+        
+        <link href="<?php echo $base_url ?>/assets/css/admin.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/admin_override.css" rel="stylesheet" />
 
     </head>
     <body>
@@ -58,7 +54,7 @@ if (isset($include_prefix)) {
                 <div class="row">
                     <div class="span12">
                         <div class="logo">
-                            <img src="<?php echo $base_url ?>/images/logo.png" alt="Logo" >
+                            <img src="<?php echo $base_url ?>/assets/images/logo.png" alt="Logo" >
                         </div>
                     </div>
                 </div>

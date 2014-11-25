@@ -50,11 +50,11 @@ include $include_prefix . "include/header.inc.php";
                                                 <td  class="text-align-left pl20">' . $description . '...</td>
                                                 <td class="text-align-center">
                                                     <a href="'.$base_url.'/static_pages/edit.php?page_id=' . $record->page_id . '">
-                                                        <img src="'.$base_url.'/img/edit-icon.png" />  
+                                                        <img src="'.$base_url.'/assets/images/edit-icon.png" />  
                                                     </a>
                                                     &nbsp;
                                                     <a href="'.$base_url.'/static_pages/delete.php?page_id=' . $record->page_id . '">
-                                                        <img src="'.$base_url.'/img/delete-icon.png" width="17px"/>  
+                                                        <img src="'.$base_url.'/assets/images/delete-icon.png" width="17px"/>  
                                                     </a>
                                                 </td>
                                         </tr>';

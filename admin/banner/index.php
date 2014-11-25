@@ -1,9 +1,6 @@
 <?php
-$include_prefix = '../../../';
+$include_prefix = '../';
 include $include_prefix . "include/header.inc.php";
-if(!isset($_REQUEST['article_id'])){
-    header('LOCATION: '.$base_url.'/article/posts');
-}
 ?>
 
 <div id="content">
@@ -12,7 +9,7 @@ if(!isset($_REQUEST['article_id'])){
             <div class="span12">
 
                 <div class="panel">
-                    <div class="panel-header"><i class="icon-tasks"></i> Article Images Management<a href="<?php echo $base_url; ?>/article/posts/images/add.php?article_id=<?php echo $_REQUEST['article_id']; ?>" class="float-right">+ Add New Record</a></div>
+                    <div class="panel-header"><i class="icon-tasks"></i> Article Images Management<a href="<?php echo $base_url; ?>/banner/add.php?article_id=<?php echo $_REQUEST['article_id']; ?>" class="float-right">+ Add New Record</a></div>
                     <div class="panel-content">
                         <?php if (isset($_SESSION['success_message'])): ?>
                             <div class="alert alert-success">
@@ -56,11 +53,11 @@ if(!isset($_REQUEST['article_id'])){
                                                 <td  class="text-align-center">' . $record->display_order . '</td>
                                                 <td  class="text-align-center">' . (($record->is_active == 1) ? 'Active' : 'Inactive') . '</td>
                                                 <td class="text-align-center">
-                                                    <a href="' . $base_url . '/article/posts/images/edit.php?article_id=' . $record->article_id . '&article_image_id=' . $record->article_image_id . '">
+                                                    <a href="' . $base_url . '/banner/edit.php?article_id=' . $record->article_id . '&article_image_id=' . $record->article_image_id . '">
                                                         <img src="' . $base_url . '/assets/images/edit-icon.png" />  
                                                     </a>
                                                     &nbsp;
-                                                    <a href="' . $base_url . '/article/posts/images/delete.php?article_id=' . $record->article_id . '&article_image_id=' . $record->article_image_id . '">
+                                                    <a href="' . $base_url . '/banner/delete.php?article_id=' . $record->article_id . '&article_image_id=' . $record->article_image_id . '">
                                                         <img src="' . $base_url . '/assets/images/delete-icon.png" width="17px"/>  
                                                     </a>
                                                 </td>

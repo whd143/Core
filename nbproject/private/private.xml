@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/angular.local/admin/article/posts/images/add.php</file>
-            <file>file:/opt/lampp/htdocs/angular.local/admin/article/posts/images/edit.php</file>
-            <file>file:/opt/lampp/htdocs/angular.local/admin/article/posts/images/delete.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/static_pages/index.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/include/header.inc.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/article/posts/index.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/banner/delete.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/banner/index.php</file>
             <file>file:/opt/lampp/htdocs/angular.local/admin/article/posts/images/index.php</file>
-            <file>file:/opt/lampp/htdocs/angular.local/admin/edit_slider.php</file>
-            <file>file:/opt/lampp/htdocs/angular.local/admin/include/setting.inc.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/banner/edit.php</file>
+            <file>file:/opt/lampp/htdocs/angular.local/admin/banner/add.php</file>
         </group>
     </open-files>
 </project-private>

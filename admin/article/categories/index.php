@@ -48,11 +48,11 @@ include $include_prefix . "include/header.inc.php";
                                                 <td  class="text-align-center">' . (($record->is_active==1) ? 'Yes':'No') . '</td>
                                                 <td class="text-align-center">
                                                     <a href="'.$base_url.'/article/categories/edit.php?category_id=' . $record->category_id . '">
-                                                        <img src="'.$base_url.'/img/edit-icon.png" />  
+                                                        <img src="'.$base_url.'/assets/images/edit-icon.png" />  
                                                     </a>
                                                     &nbsp;
                                                     <a href="'.$base_url.'/article/categories/delete.php?category_id=' . $record->category_id . '">
-                                                        <img src="'.$base_url.'/img/delete-icon.png" width="17px"/>  
+                                                        <img src="'.$base_url.'/assets/images/delete-icon.png" width="17px"/>  
                                                     </a>
                                                 </td>
                                         </tr>';
