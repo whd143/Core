@@ -9,19 +9,19 @@ require_once "include/setting.inc.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link href="./css/bootstrap.min.css" rel="stylesheet" />
-        <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="./css/jasny-bootstrap.min.css" rel="stylesheet" />
-        <link href="./css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="./css/font-awesome.css" rel="stylesheet" />
+        <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="./assets/css/jasny-bootstrap.min.css" rel="stylesheet" />
+        <link href="./assets/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="./assets/css/font-awesome.css" rel="stylesheet" />
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
         <!-- <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'> -->
-        <link href="./css/admin.css" rel="stylesheet" />
+        <link href="./assets/css/admin.css" rel="stylesheet" />
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5./assets/js/"></script>
         <![endif]-->
 
         <!-- Le fav and touch icons -->
@@ -120,7 +120,5 @@ require_once "include/setting.inc.php";
                 </div>
             </div>   
         </div>
-        <script src="./js/jquery-1.7.2.min.js"></script>
-        <script src="./js/bootstrap.js"></script>
     </body>
 </html>

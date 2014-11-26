@@ -8,6 +8,8 @@
             <li><a href="<?php echo $base_url ?>/article/posts">Posts</a></li>
         </ul>
     </li>
+    
+    <li><a href="<?php echo $base_url ?>/pearls">Golden Words</a></li>
 </ul>
 <ul class="nav pull-right">
     <li>
