@@ -23,6 +23,8 @@ if (isset($include_prefix)) {
         <link href="<?php echo $base_url ?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="<?php echo $base_url ?>/assets/css/jquery-ui.css" rel="stylesheet" />
+        
         <link href="<?php echo $base_url ?>/assets/css/font-awesome.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
