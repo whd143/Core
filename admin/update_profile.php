@@ -17,13 +17,13 @@ if (isset($_REQUEST['submit'])) {
          * http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
          */
         $query = <<<HDOC
-        UPDATE  `login` 
+        UPDATE  `admin` 
         SET 
             `name`=  '{$sql->real_escape_string($name)}',
             `username`=  '{$sql->real_escape_string($username)}',   
             `email`=  '{$sql->real_escape_string($email)}',  
             `password`=  MD5('$new_password')  
-        WHERE `id` = '{$sql->real_escape_string($_SESSION['id'])}' AND `password`=MD5('$password')
+        WHERE `admin_id` = '{$sql->real_escape_string($_SESSION['id'])}' AND `password`=MD5('$password')
 HDOC;
 
         if (!$result = $sql->query($query)) {

@@ -5,8 +5,8 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : '';
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous'.  rand(1, 2000);
+    $slug = str_replace(' ', '_', strtolower($title_en).'.html');
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
     $show_as_menu = isset($_POST['show_as_menu']) ? $_POST['show_as_menu'] : 1;
     $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
@@ -34,7 +34,7 @@ HDOC;
 
                                 <legend>Add Category</legend>
 
-                                <div class="control-group">
+                                <div class="control-group" style="display: none;">
                                     <label class="control-label" for="slug">Slug (EN) : </label>
                                     <div class="controls">
                                         <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter page slug" id="slug" name="slug" value="" maxlength="64" />

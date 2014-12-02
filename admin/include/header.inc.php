@@ -25,7 +25,7 @@ if (isset($include_prefix)) {
         <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/font-awesome.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-        
+
         <link href="<?php echo $base_url ?>/assets/css/admin.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/admin_override.css" rel="stylesheet" />
 

@@ -1,24 +1,21 @@
 <?php
-$include_prefix = '../../';
+$include_prefix = '../';
 include $include_prefix . "include/header.inc.php";
 /**
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $slug = isset($_POST['slug']) ? $_POST['slug'] : null;
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : null;
-    $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : null;
-    $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
-    $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : null;
-    $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
-    $is_home = isset($_POST['is_home']) ? $_POST['is_home'] : 1;
-    $is_featured = isset($_POST['is_featured']) ? $_POST['is_featured'] : 1;
-    $display_order = isset($_POST['display_order']) ? $_POST['display_order'] : 0;
     $publish_on = date('Y-m-d', isset($_POST['publish_on']) ? strtotime($_POST['publish_on']) : time());
-    $video_url = isset($_POST['video_url']) ? $_POST['video_url'] : null;
+    $ayat_en = isset($_POST['ayat_en']) ? $_POST['ayat_en'] : null;
+    $ayat_ur = isset($_POST['ayat_ur']) ? $_POST['ayat_ur'] : null;
+    $hadith_en = isset($_POST['hadith_en']) ? $_POST['hadith_en'] : null;
+    $hadith_ur = isset($_POST['hadith_ur']) ? $_POST['hadith_ur'] : null;
+    $quote_en = isset($_POST['quote_en']) ? $_POST['quote_en'] : null;
+    $quote_ur = isset($_POST['quote_ur']) ? $_POST['quote_ur'] : null;
+
     $query = <<<HDOC
-                    INSERT INTO  `article` (`slug`,`title_en`,`description_en`,`title_ur`,`description_ur`,`publish_on`,`video_url`,`is_featured`,`is_home`,`is_active`,`created_by`,`modified_by`,`created_on`) 
-                    VALUES('{$sql->real_escape_string($slug)}','{$sql->real_escape_string($title_en)}','{$sql->real_escape_string($description_en)}','{$sql->real_escape_string($title_ur)}','{$sql->real_escape_string($description_ur)}','{$sql->real_escape_string($publish_on)}','{$sql->real_escape_string($video_url)}','{$sql->real_escape_string($is_featured)}','{$sql->real_escape_string($is_home)}','{$sql->real_escape_string($is_active)}','{$_SESSION['id']}','{$_SESSION['id']}',NOW()) 
+                    INSERT INTO  `golden_word` (`ayat_en`,`ayat_ur`,`hadith_en`,`hadith_ur`,`quote_en`,`quote_ur`,`publish_on`,`created_by`,`modified_by`,`created_on`) 
+                    VALUES('{$sql->real_escape_string($ayat_en)}','{$sql->real_escape_string($ayat_ur)}','{$sql->real_escape_string($hadith_en)}','{$sql->real_escape_string(hadith_ur)}','{$sql->real_escape_string($quote_en)}','{$sql->real_escape_string($quote_ur)}','{$sql->real_escape_string($publish_on)}','{$_SESSION['id']}','{$_SESSION['id']}',NOW()) 
 HDOC;
     if ($sql->query($query) == FALSE) {
         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
@@ -27,26 +24,23 @@ HDOC;
     header('LOCATION: index.php');
 }
 ?>
+<style>
+    textarea[rows="15"]{
+        height:80px !important;
+    }
+</style>
 <div id="content">
     <div class="container">
         <div class="row">
             <div class="span12">
 
                 <div class="panel">
-                    <div class="panel-header"><i class="icon-tasks"></i> Articles Management</div>
+                    <div class="panel-header"><i class="icon-tasks"></i> Golden Words Management</div>
                     <div class="panel-content">
                         <form id="frm" name="frm" action="" method="post" enctype="multipart/form-data" class="form-horizontal" >
                             <fieldset>
 
-                                <legend>Add Article</legend>
-
-                                <div class="control-group">
-                                    <label class="control-label" for="slug">Slug (EN) : </label>
-                                    <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article slug" id="slug" name="slug" value="" maxlength="64" />
-                                        <span style="color:red;"> * </span>
-                                    </div>
-                                </div>    
+                                <legend>Add Golden Words</legend>
 
                                 <div class="control-group">
                                     <label class="control-label" for="publish_on">Publish Date : </label>
@@ -57,77 +51,50 @@ HDOC;
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="title_ur">Title (UR) : </label>
+                                    <label class="control-label" for="ayat_en">Ayat (EN) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article title in ur" id="title_ur" name="title_ur" value="" maxlength="255" />
+                                        <textarea id="ayat_en" name="ayat_en" title="Enter ayat-e-kareema in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="description_ur">Description (UR) :</label>
+                                    <label class="control-label" for="ayat_ur">Ayat (UR) : </label>
                                     <div class="controls">
-                                        <textarea id="description_ur" name="description_ur" title="Enter article description in ur" rows="15" cols="80" style="width: 80%" class="tinymce"></textarea>
-                                    </div>
-                                </div>
-
-
-                                <div class="control-group">
-                                    <label class="control-label" for="title_en">Title (EN) : </label>
-                                    <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article title in english" id="title_en" name="title_en" value="" maxlength="255" />
-                                        <span style="color:red;"> * </span>
-                                    </div>
-                                </div>
-
-
-                                <div class="control-group">
-                                    <label class="control-label" for="description_en">Description (EN) :</label>
-                                    <div class="controls">
-                                        <textarea id="description_en" name="description_en" title="Enter article description in english" rows="15" cols="80" style="width: 80%" class="tinymce" ></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label" for="video_url">Video Url : </label>
-                                    <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article video_url" id="video_url" name="video_url" value="" maxlength="11" />
+                                        <textarea id="ayat_ur" name="ayat_ur" title="Enter ayat-e-kareema in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="display_order">Display Order : </label>
+                                    <label class="control-label" for="hadith_en">Hadith (EN) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article display order" id="display_order" name="display_order" value="" maxlength="11" />
+                                        <textarea id="hadith_en" name="hadith_en" title="Enter hadith in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="is_home">Front Page Display:</label>
+                                    <label class="control-label" for="hadith_ur">Hadith (UR) : </label>
                                     <div class="controls">
-                                        <input type="radio" id="active" name="is_home" value="1" />&nbsp;Yes 
-                                        <br />
-                                        <input type="radio" id="inactive" name="is_home" value="0" checked />&nbsp;No
+                                        <textarea id="hadith_ur" name="hadith_ur" title="Enter hadith in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="is_featured">Is Featured:</label>
+                                    <label class="control-label" for="quote_en">Quote (EN) : </label>
                                     <div class="controls">
-                                        <input type="radio" id="active" name="is_featured"  value="1" />&nbsp;Yes 
-                                        <br />
-                                        <input type="radio" id="inactive" name="is_featured"  value="0"  checked />&nbsp;No
+                                        <textarea id="quote_en" name="quote_en" title="Enter quote in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="is_active">Status :</label>
+                                    <label class="control-label" for="quote_ur">Quote (UR) : </label>
                                     <div class="controls">
-                                        <input type="radio" id="active" name="is_active"  value="1" checked />&nbsp;Active 
-                                        <br />
-                                        <input type="radio" id="inactive" name="is_active"  value="0" />&nbsp;Inactive
+                                        <textarea id="quote_ur" name="quote_ur" title="Enter quote in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"> * </span>
                                     </div>
                                 </div>
 

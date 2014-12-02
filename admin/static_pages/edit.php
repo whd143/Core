@@ -8,8 +8,8 @@ include $include_prefix . "include/header.inc.php";
  */
 if (isset($_POST['submit'])) {
     $page_id = isset($_POST['page_id']) ? $_POST['page_id'] : 0;
-    $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : '';
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous'.  rand(1, 2000);
+    $slug = str_replace(' ', '_', strtolower($title_en) . '.html');
     $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : '';
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
     $description_ur = isset($_POST['description_ur']) ? $_POST['description_ur'] : '';
@@ -66,7 +66,7 @@ HDOC;
 
                                     <legend>Edit Page</legend>
 
-                                    <div class="control-group">
+                                    <div class="control-group" style="display: none;">
                                         <label class="control-label" for="slug">Slug (EN) : </label>
                                         <div class="controls">
                                             <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter page slug" id="slug" name="slug" value="<?php echo $record->slug; ?>" maxlength="64" />

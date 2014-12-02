@@ -11,11 +11,10 @@
                             You can manage you website contents here
                         </p>
                         <ul class="m-stopng">
-                            <li><a href="<?php echo $base_url; ?>/static_pages/" class="m-second">Pages</a></li>
-                            <li><a href="view_products.php" class="m-fourth">Gallery</a></li>
-                            <li><a href="social.php" class="m-sixth">Social links</a></li>
-                            <li><a href="contact.php" class="m-seventh">Contact us</a></li>
-                            <li><a href="reg-members.php" class="m-eight">Members</a></li>
+                            <li><a href="<?php echo $base_url ?>/static_pages">Pages</a></li>
+                            <li><a href="<?php echo $base_url ?>/article/categories">Article Categories</a></li>
+                            <li><a href="<?php echo $base_url ?>/article/posts">Article Posts</a></li>
+                            <li><a href="<?php echo $base_url ?>/pearls">Golden Words</a></li>
                         </ul>
                     </div>
                 </div>
