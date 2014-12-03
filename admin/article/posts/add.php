@@ -51,7 +51,7 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="publish_on">Publish Date : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Choose publish date" id="publish_on" name="publish_on" value="" />
+                                        <input type="text" class="input-xlarge" title="Choose publish date" id="publish_on" name="publish_on" value="<?php echo date('Y-m-d'); ?>" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="title_ur">Title (UR) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article title in ur" id="title_ur" name="title_ur" value="" maxlength="255" />
+                                        <input type="text" class="input-xlarge" title="Enter article title in ur" id="title_ur" name="title_ur" value="" maxlength="255" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
@@ -75,11 +75,10 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="title_en">Title (EN) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article title in english" id="title_en" name="title_en" value="" maxlength="255" />
+                                        <input type="text" class="input-xlarge" title="Enter article title in english" id="title_en" name="title_en" value="" maxlength="255" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
-
 
                                 <div class="control-group">
                                     <label class="control-label" for="description_en">Description (EN) :</label>
@@ -91,7 +90,7 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="video_url">Video Url : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article video_url" id="video_url" name="video_url" value="" maxlength="11" />
+                                        <input type="text" class="input-xlarge" title="Enter article video_url" id="video_url" name="video_url" value="" maxlength="11" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
@@ -99,7 +98,7 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="display_order">Display Order : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter article display order" id="display_order" name="display_order" value="" maxlength="11" />
+                                        <input type="text" class="input-xlarge" title="Enter article display order" id="display_order" name="display_order" value="" maxlength="11" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>

@@ -24,8 +24,9 @@ include $include_prefix . "include/header.inc.php";
                             <table class="display" cellspacing="0" width="100%" id="stopNGTable">
                                 <thead>
                                     <tr>
-                                        <th class="text-align-left pl20 width20"><strong>Title(UR): </strong></th>
-                                        <th class="text-align-left pl20 width20"><strong>Title(EN): </strong></th>
+                                        <th class="text-align-center"><strong>Publish On</strong></th>
+                                        <th class="text-align-left pl20 width20"><strong>Title(UR) </strong></th>
+                                        <th class="text-align-left pl20 width20"><strong>Title(EN)</strong></th>
                                         <th class="text-align-center"><strong>Is Home</strong> </th>
                                         <th class="text-align-center"><strong>Featured</strong> </th>
                                         <th class="text-align-center"><strong>Status</strong> </th>
@@ -34,7 +35,7 @@ include $include_prefix . "include/header.inc.php";
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = "SELECT * FROM `article`";
+                                    $query = "SELECT * FROM `article` ORDER BY `publish_on` DESC";
                                     if (!$result = $sql->query($query)) {
                                         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
                                     }
@@ -49,6 +50,7 @@ include $include_prefix . "include/header.inc.php";
                                             }
 
                                             echo '<tr class="height60 gradeA">
+                                                <td  class="text-align-center">' . $record->publish_on . '</td>
                                                 <td  class="text-align-left pl20">' . $record->title_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $record->title_en . '</td>
                                                 <td  class="text-align-center">' . (($record->is_home == 1) ? 'Yes' : 'No') . '</td>

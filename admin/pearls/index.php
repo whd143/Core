@@ -24,16 +24,16 @@ include $include_prefix . "include/header.inc.php";
                             <table class="display" cellspacing="0" width="100%" id="stopNGTable">
                                 <thead>
                                     <tr>
+                                        <th class="text-align-center"><strong>Publish On</strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Ayat</strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Hadith</strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Quote</strong> </th>
-                                        <th class="text-align-center"><strong>Publish Date</strong> </th>
                                         <th class="text-align-center"><strong>Control</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = "SELECT * FROM `golden_word`";
+                                    $query = "SELECT * FROM `golden_word` ORDER BY `publish_on` DESC";
                                     if (!$result = $sql->query($query)) {
                                         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
                                     }
@@ -41,10 +41,10 @@ include $include_prefix . "include/header.inc.php";
                                         while ($record = $result->fetch_object()) {
                                             
                                             echo '<tr class="height60 gradeA">
+                                                <td  class="text-align-center">' . $record->publish_on . '</td>
                                                 <td  class="text-align-left pl20">' . $record->ayat_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $record->hadith_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $record->quote_ur . '</td>
-                                                <td  class="text-align-center">' . date('Y-m-d',  strtotime($record->publish_on)) . '</td>
                                                 <td class="text-align-center">
                                                     <a href="' . $base_url . '/pearls/edit.php?golden_word_id=' . $record->golden_word_id . '">
                                                         <img src="' . $base_url . '/assets/images/edit-icon.png" />  

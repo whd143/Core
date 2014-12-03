@@ -4,8 +4,12 @@
  * and open the template in the editor.
  */
 
-$(function(){
-    alert('jquery is active');
+$(function() {
+    
+    if ($('#publish_on').length) {
+        $('#publish_on').datepicker({dateFormat: "yy-mm-dd"});
+    }
+    
 });
 
 

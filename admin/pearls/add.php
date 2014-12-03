@@ -45,15 +45,7 @@ HDOC;
                                 <div class="control-group">
                                     <label class="control-label" for="publish_on">Publish Date : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Choose publish date" id="publish_on" name="publish_on" value="" />
-                                        <span style="color:red;"> * </span>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label" for="ayat_en">Ayat (EN) : </label>
-                                    <div class="controls">
-                                        <textarea id="ayat_en" name="ayat_en" title="Enter ayat-e-kareema in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <input type="text" class="input-xlarge" title="Choose publish date" id="publish_on" name="publish_on" value="<?php echo date('Y-m-d'); ?>" />
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
@@ -67,25 +59,9 @@ HDOC;
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="hadith_en">Hadith (EN) : </label>
-                                    <div class="controls">
-                                        <textarea id="hadith_en" name="hadith_en" title="Enter hadith in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"> * </span>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
                                     <label class="control-label" for="hadith_ur">Hadith (UR) : </label>
                                     <div class="controls">
                                         <textarea id="hadith_ur" name="hadith_ur" title="Enter hadith in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"> * </span>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label" for="quote_en">Quote (EN) : </label>
-                                    <div class="controls">
-                                        <textarea id="quote_en" name="quote_en" title="Enter quote in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
                                         <span style="color:red;"> * </span>
                                     </div>
                                 </div>
@@ -98,9 +74,33 @@ HDOC;
                                     </div>
                                 </div>
 
+                                <div class="control-group">
+                                    <label class="control-label" for="ayat_en">Ayat (EN) : </label>
+                                    <div class="controls">
+                                        <textarea id="ayat_en" name="ayat_en" title="Enter ayat-e-kareema in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="hadith_en">Hadith (EN) : </label>
+                                    <div class="controls">
+                                        <textarea id="hadith_en" name="hadith_en" title="Enter hadith in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="quote_en">Quote (EN) : </label>
+                                    <div class="controls">
+                                        <textarea id="quote_en" name="quote_en" title="Enter quote in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
+                                        <span style="color:red;"></span>
+                                    </div>
+                                </div>
+
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-success" title="Click to add new record" id="submit" name="submit">Add</button>
-                                    <a href="<?php echo $base_url; ?>/article/posts">Cancel</a>
+                                    <a href="<?php echo $base_url; ?>/pearls">Cancel</a>
                                 </div>
 
                             </fieldset>

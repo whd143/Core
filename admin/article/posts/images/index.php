@@ -27,7 +27,7 @@ if(!isset($_REQUEST['article_id'])){
                             <table class="display" cellspacing="0" width="100%" id="stopNGTable">
                                 <thead>
                                     <tr>
-                                        <th class="text-align-left pl20 width20"><strong>Thumb: </strong></th>
+                                        <th class="text-align-center"><strong>Thumb: </strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Title(UR): </strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Title(EN): </strong></th>
                                         <th class="text-align-center"><strong>Display Order</strong> </th>
