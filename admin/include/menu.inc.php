@@ -10,6 +10,7 @@
     </li>
     
     <li><a href="<?php echo $base_url ?>/pearls">Golden Words</a></li>
+    <li><a href="<?php echo $base_url ?>/video">Video</a></li>
 </ul>
 <ul class="nav pull-right">
     <li>

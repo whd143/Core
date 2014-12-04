@@ -15,6 +15,7 @@
                             <li><a href="<?php echo $base_url ?>/article/categories">Article Categories</a></li>
                             <li><a href="<?php echo $base_url ?>/article/posts">Article Posts</a></li>
                             <li><a href="<?php echo $base_url ?>/pearls">Golden Words</a></li>
+                            <li><a href="<?php echo $base_url ?>/video">Video</a></li>
                         </ul>
                     </div>
                 </div>

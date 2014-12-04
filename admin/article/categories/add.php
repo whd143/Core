@@ -37,24 +37,24 @@ HDOC;
                                 <div class="control-group" style="display: none;">
                                     <label class="control-label" for="slug">Slug (EN) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter page slug" id="slug" name="slug" value="" maxlength="64" />
-                                        <span style="color:red;"> * </span>
+                                        <input type="text" class="input-xlarge " title="Enter page slug" id="slug" name="slug" value="" maxlength="64" />
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>    
 
                                 <div class="control-group">
                                     <label class="control-label" for="title_ur">Title (UR) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter page title in ur" id="title_ur" name="title_ur" value="" maxlength="255" />
-                                        <span style="color:red;"> * </span>
+                                        <input type="text" class="input-xlarge " title="Enter page title in ur" id="title_ur" name="title_ur" value="" maxlength="255" />
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
                                     <label class="control-label" for="title_en">Title (EN) : </label>
                                     <div class="controls">
-                                        <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Enter page title in english" id="title_en" name="title_en" value="" maxlength="255" />
-                                        <span style="color:red;"> * </span>
+                                        <input type="text" class="input-xlarge " title="Enter page title in english" id="title_en" name="title_en" value="" maxlength="255" />
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
