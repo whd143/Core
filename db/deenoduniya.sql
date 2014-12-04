@@ -183,6 +183,38 @@ INSERT INTO `category` VALUES (1,'islam','Islam','Islam',0,1,'http://angular.loc
 UNLOCK TABLES;
 
 --
+-- Table structure for table `daily_image`
+--
+
+DROP TABLE IF EXISTS `daily_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `daily_image` (
+  `daily_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `publish_on` date DEFAULT NULL,
+  `uri_original_name` varchar(64) DEFAULT NULL,
+  `uri` varchar(255) DEFAULT NULL,
+  `thumb_original_name` varchar(64) DEFAULT NULL,
+  `thumb` varchar(255) DEFAULT NULL,
+  `display_order` int(11) DEFAULT '0',
+  `created_by` int(11) DEFAULT NULL,
+  `modified_by` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`daily_image_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `daily_image`
+--
+
+LOCK TABLES `daily_image` WRITE;
+/*!40000 ALTER TABLE `daily_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `daily_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `golden_word`
 --
 
@@ -286,4 +318,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-04 14:38:40
+-- Dump completed on 2014-12-04 15:17:35
