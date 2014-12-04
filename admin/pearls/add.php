@@ -46,7 +46,7 @@ HDOC;
                                     <label class="control-label" for="publish_on">Publish Date : </label>
                                     <div class="controls">
                                         <input type="text" class="input-xlarge" title="Choose publish date" id="publish_on" name="publish_on" value="<?php echo date('Y-m-d'); ?>" />
-                                        <span style="color:red;"> * </span>
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
@@ -54,7 +54,7 @@ HDOC;
                                     <label class="control-label" for="ayat_ur">Ayat (UR) : </label>
                                     <div class="controls">
                                         <textarea id="ayat_ur" name="ayat_ur" title="Enter ayat-e-kareema in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"> * </span>
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@ HDOC;
                                     <label class="control-label" for="hadith_ur">Hadith (UR) : </label>
                                     <div class="controls">
                                         <textarea id="hadith_ur" name="hadith_ur" title="Enter hadith in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"> * </span>
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
@@ -70,7 +70,7 @@ HDOC;
                                     <label class="control-label" for="quote_ur">Quote (UR) : </label>
                                     <div class="controls">
                                         <textarea id="quote_ur" name="quote_ur" title="Enter quote in urdu" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"> * </span>
+                                        <span class="mandatory"> * </span>
                                     </div>
                                 </div>
 
@@ -78,7 +78,7 @@ HDOC;
                                     <label class="control-label" for="ayat_en">Ayat (EN) : </label>
                                     <div class="controls">
                                         <textarea id="ayat_en" name="ayat_en" title="Enter ayat-e-kareema in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"></span>
+                                        <span class="mandatory"></span>
                                     </div>
                                 </div>
 
@@ -86,7 +86,7 @@ HDOC;
                                     <label class="control-label" for="hadith_en">Hadith (EN) : </label>
                                     <div class="controls">
                                         <textarea id="hadith_en" name="hadith_en" title="Enter hadith in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"></span>
+                                        <span class="mandatory"></span>
                                     </div>
                                 </div>
 
@@ -94,7 +94,7 @@ HDOC;
                                     <label class="control-label" for="quote_en">Quote (EN) : </label>
                                     <div class="controls">
                                         <textarea id="quote_en" name="quote_en" title="Enter quote in english" rows="15" cols="30" style="width: 80%" class="tinymce"></textarea>
-                                        <span style="color:red;"></span>
+                                        <span class="mandatory"></span>
                                     </div>
                                 </div>
 
