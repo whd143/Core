@@ -309,6 +309,9 @@ table{
     text-align:center;
     text-transform:uppercase;
 }
+.ftr h1 a{
+	color:#fff;
+}
 
 .news:nth-child(2n+0) .ftr h1{
     background:#0f7cbb;
@@ -338,6 +341,11 @@ table{
     width:100%;
     margin:14px 0 0 0;
 }
+.psts a{
+	 color: #52b5f1;
+    float: left;
+    margin-top: 10px;
+}
 .psts img{
     float:right;
     margin-left:10px;
@@ -352,7 +360,7 @@ table{
     float:right;
     font-weight:bold;
     font-size:12px;
-    margin-top:10px;
+	margin-top:12px;
 }
 
 .content_area .sidebar{
@@ -370,20 +378,6 @@ table{
 .content_area .sidebar img:last-child{
     margin-bottom:0px;
 }
-.content_area a{
-    float:left;
-    background:#138971;
-    color:#fff;
-    font-size:15px;
-    width:100%;
-    margin-left:5px;
-    text-align:center;
-    padding:10px 0;
-    border-radius:5px;
-    margin-bottom:20px;
-}
-
-
 /*************************/
 #video-bg{
     float:left;
@@ -439,9 +433,11 @@ table{
     color: #555555;
     font-size: 14px;
     line-height: 30px;
-    text-align: justify;
-    width: 100%;
     padding-top:20px;
+}
+.inner img{
+	float:right;
+	margin:5px 0 5px 10px;
 }
 /************************/
 

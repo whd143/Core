@@ -11,7 +11,7 @@ function getBaseURI() {
     );
 }
 
-$base_url = getBaseURI() . '/admin';
+$base_url = getBaseURI() . '/angular.local';
 /**
  * Error / Notice Settings
  */
@@ -29,7 +29,7 @@ if (strstr($base_url, 'local') == FALSE) { // live server settings
     $password = '';
     $db_name = '';
 } else { //local server settings
-    $host = '127.0.0.1';
+	$host = '127.0.0.1';
     $user = 'root';
     $password = 'secret';
     $db_name = 'deenoduniya';

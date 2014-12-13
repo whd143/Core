@@ -13,16 +13,4 @@ and open the template in the editor.
 }
 .show{
     display:inline-block;
-}
-.content_area .left {
-    width:980px !important;
-}
-.news{
-    margin-right: 20px;
-}
-.news:nth-child(2n+0) {
-    float: left;
-}
-.news:nth-child(3n+0) {
-    margin-right: 0px;
-}
+}	

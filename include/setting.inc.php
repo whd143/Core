@@ -1,5 +1,4 @@
 <?php
-session_start();
 $_SESSION['lang'] = 'ur';
         const CSS_PATH = '';
 
@@ -13,7 +12,7 @@ $base_url = getBaseURI();
 /**
  * Error / Notice Settings
  */
-if (strstr($base_url, 'local') != FALSE) { // local server
+if (strstr($base_url, 'localhost') != FALSE) { // local server
     error_reporting(E_ALL); // & ~E_NOTICE & ~ E_WARNING
     ini_set('display_errors', 'On');
 }
@@ -27,10 +26,11 @@ if (strstr($base_url, 'local') == FALSE) { // live server settings
     $password = '';
     $db_name = '';
 } else { //local server settings
-    $host = '127.0.0.1';
+	$host = '127.0.0.1';
     $user = 'root';
     $password = 'secret';
     $db_name = 'deenoduniya';
+	
 }
 
 //echo $host.' - '.$user.' - '.$password.' - '.$db_name;

@@ -11,26 +11,55 @@
     <div class="advanced-slider" id="responsive-slider">
         <ul class="slides">
 
+			
+            <?php
+						$query = 'SELECT * FROM article WHERE `is_featured`=1 LIMIT 5';
+						if (!$result = $sql->query($query)) {
+							dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
+						}
+						if ($result->num_rows > 0) {
+							while ($record = $result->fetch_array()) {
+								$active_class='';
+								if(isset($_GET['category']) && $record["slug"]==$_GET['category']){
+									$active_class='active';
+									
+								}
+								?>
+                                
+                                <?php 
+									$queryarticleimg = 'SELECT * FROM article_image WHERE article_id="'.$record['article_id'].'"';
+									if (!$resultarticleimg = $sql->query($queryarticleimg)) {
+										dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $queryarticleimg);
+									}
+									
+									if ($resultarticleimg->num_rows > 0) {
+									
+									while($recordarticleimg = $resultarticleimg->fetch_array())
+									{
+										?>
+                                        	 <li class="slide rounded-caption">
+                                                <img class="image" src="<?php echo $base_url."/".$recordarticleimg['slider_full_img']; ?>" alt=""/>
+                                                <img class="thumbnail" src="<?php echo $base_url."/".$recordarticleimg['slider_thumbnail']; ?>" alt="<?php echo $record['title_ur']; ?>"/>
+                                            </li>
+			                                <img src="<?php echo $base_url."/".$recordarticleimg['thumb_original_name']; ?>">
+                                        <?php	
+									}
+									}
+									
+								?> 
+                                <?php
+								
+								
+							}
+						}
+					?>
+                    
+            
+            
+            
 
-            <li class="slide rounded-caption">
-                <img class="image" src="images/kaba.png" alt=""/>
-                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
-            </li>
+           
 
-            <li class="slide rounded-caption">
-                <img class="image" src="images/kaba.png" alt=""/>
-                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
-            </li>
-
-            <li class="slide rounded-caption">
-                <img class="image" src="images/kaba.png" alt=""/>
-                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
-            </li>
-
-            <li class="slide rounded-caption">
-                <img class="image" src="images/kaba.png" alt=""/>
-                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
-            </li>
 
         </ul>
     </div>

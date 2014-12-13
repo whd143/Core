@@ -10,6 +10,7 @@ require_once 'include/setting.inc.php';
 
         <title>AlFalah</title>
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/styles.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/base/advanced-slider-base.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/glossy-square/gray/glossy-square-gray.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/responsive-slider.css" media="screen"/>
@@ -21,6 +22,12 @@ require_once 'include/setting.inc.php';
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.touchSwipe.min.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.advancedSlider.min.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/functions.js"></script>
+        <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.quick.pagination.min.js"></script>
+		<script type="text/javascript">
+        $(document).ready(function() {
+            $("ul.pagination").quickPagination({pagerLocation:"both",pageSize:"1"});
+        });
+        </script>
     </head>
 
     <body>
