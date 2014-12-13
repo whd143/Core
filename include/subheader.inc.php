@@ -34,7 +34,17 @@
         </div>
         <div class="voda">
             <img src="images/vodafone.png" />
-            <img src="images/temp.png" />
         </div>
+        
+        <div  id="weather" style="float:left;">
+            <p style="display: block !important; width: 160px; text-align: center; font-family: sans-serif; font-size: 12px;">
+                <a href="http://weathertemperature.com/forecast/?q=Lahore,Punjab,Pakistan" title="Lahore, Punjab, Pakistan Weather Forecast" onclick="this.target = '_blank'">
+                    <img src="http://widget.addgadgets.com/weather/v1/?q=Lahore,Punjab,Pakistan&amp;s=2&amp;u=1" alt="Weather temperature in Lahore, Punjab, Pakistan" width="160" height="102" style="border:0" />
+                </a>
+                <br />
+                <a href="http://weathertemperature.com/" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" onclick="this.target = '_blank'">Weather Forecast</a>
+            </p>
+            <div style="clear:both"></div>
+        </div> 
     </article>
 </section>

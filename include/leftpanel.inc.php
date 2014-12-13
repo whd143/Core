@@ -15,20 +15,20 @@
 				}
 				if(isset($cat_id))
 				{
-					$cat_id=$record['cat_id'];
+					$cat_id=$record['category_id'];
 				}
 				?>
                 <div class="news">
                     <div class="ftr">
                     	
-                        <h1><a href="cat.php?cat_id=<?php echo $record["category_id"]; ?>"><?php echo $record['title_ur']; ?></a></h1>
+                        <h1><a href="category.php?cat_id=<?php echo $record["category_id"]; ?>"><?php echo $record['title_ur']; ?></a></h1>
                         <img src="<?php echo $base_url."/".$record['cat_img']; ?>">
                     </div>
                     
                     <?php 
 					
 						
-						$queryarticle = 'SELECT * FROM article WHERE cat_id="7" LIMIT 3';
+						$queryarticle = 'SELECT * FROM article WHERE category_id="7" LIMIT 3';
 						if (!$resultarticles = $sql->query($queryarticle)) {
 							dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $queryarticle);
 						}

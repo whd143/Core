@@ -7,8 +7,9 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
+    $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : null;
     $article_id = isset($_POST['article_id']) ? $_POST['article_id'] : 0;
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous'.  rand(1, 2000);
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous' . rand(1, 2000);
     $slug = str_replace(' ', '_', strtolower($title_en) . '.html');
     $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : null;
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
@@ -22,6 +23,7 @@ if (isset($_POST['submit'])) {
     $query = <<<HDOC
                     UPDATE  `article` 
                     SET 
+                        `category_id`  = '{$sql->real_escape_string($category_id)}',
                         `slug`  = '{$sql->real_escape_string($slug)}',
                         `title_en` =  '{$sql->real_escape_string($title_en)}',
                         `description_en` =  '{$sql->real_escape_string($description_en)}',
@@ -88,6 +90,31 @@ HDOC;
                                         <div class="controls">
                                             <input type="text" class="input-xlarge validate[required,custom[onlyLetterNumberHyphen]]" title="Choose publish date" id="publish_on" name="publish_on" value="<?php echo $record->publish_on; ?>" />
                                             <span style="color:red;"> * </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="category_id">Category : </label>
+                                        <div class="controls">
+                                            <select id="category_id" name="category_id" >
+                                                <option >--choose category--</option>
+                                                <?php
+                                                $query = "SELECT `category_id`, `title_en`,`title_ur` FROM `category` WHERE `is_active`=1";
+                                                if (!$result = $sql->query($query)) {
+                                                    dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
+                                                }
+                                                if ($result->num_rows > 0) {
+                                                    $select = '';
+                                                    while ($category_record = $result->fetch_object()) {
+                                                        if ($category_record->category_id == $record->category_id) {
+                                                            $select = 'select="selected"';
+                                                        }
+                                                        echo ' <option value="' . $category_record->category_id . '"  ' . $selected . ' > ' . $category_record->title_en . ' | ' . $category_record->title_ur . '</option>';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <span style = "color:red;"> * </span>
                                         </div>
                                     </div>
 

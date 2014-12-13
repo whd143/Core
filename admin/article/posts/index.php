@@ -25,6 +25,7 @@ include $include_prefix . "include/header.inc.php";
                                 <thead>
                                     <tr>
                                         <th class="text-align-center"><strong>Publish On</strong></th>
+                                        <th class="text-align-left pl20 width20"><strong>Category </strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Title(UR) </strong></th>
                                         <th class="text-align-left pl20 width20"><strong>Title(EN)</strong></th>
                                         <th class="text-align-center"><strong>Is Home</strong> </th>
@@ -35,7 +36,11 @@ include $include_prefix . "include/header.inc.php";
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = "SELECT * FROM `article` ORDER BY `publish_on` DESC";
+                                    $query = <<<HDOC
+                                            SELECT `article`.*, CONCAT(`category`.`title_en`, ' | ', `category`.`title_ur`) AS category_title FROM `article` 
+                                            LEFT JOIN `category` ON `category`.`category_id`= `article`.`category_id`
+                                            ORDER BY `publish_on` DESC
+HDOC;
                                     if (!$result = $sql->query($query)) {
                                         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
                                     }
@@ -51,6 +56,7 @@ include $include_prefix . "include/header.inc.php";
 
                                             echo '<tr class="height60 gradeA">
                                                 <td  class="text-align-center">' . $record->publish_on . '</td>
+                                                <td  class="text-align-left pl20">' . $record->category_title . '</td>
                                                 <td  class="text-align-left pl20">' . $record->title_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $record->title_en . '</td>
                                                 <td  class="text-align-center">' . (($record->is_home == 1) ? 'Yes' : 'No') . '</td>

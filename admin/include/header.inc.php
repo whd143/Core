@@ -34,7 +34,7 @@ if (isset($include_prefix)) {
     </head>
     <body>
         <div id="top-strip">
-            <div class="container">
+            <div class="container"  >
                 <div class="row">
                     <div class="offset8 span4">
                         <div class="pull-right">
@@ -51,7 +51,7 @@ if (isset($include_prefix)) {
             </div>
         </div>
 
-        <div id="logo-strip">
+        <div id="logo-strip"  >
             <div class="container">
                 <div class="row">
                     <div class="span12">
@@ -63,7 +63,7 @@ if (isset($include_prefix)) {
             </div>
         </div>
 
-        <div id="nav-strip">
+        <div id="nav-strip" >
 
             <div class="container">
                 <div class="row">

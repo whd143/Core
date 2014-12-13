@@ -1,4 +1,5 @@
 <?php
+
 $_SESSION['lang'] = 'ur';
         const CSS_PATH = '';
 
@@ -8,7 +9,7 @@ function getBaseURI() {
     );
 }
 
-$base_url = getBaseURI();
+$base_url = getBaseURI().'/demo';
 /**
  * Error / Notice Settings
  */
@@ -22,15 +23,14 @@ if (strstr($base_url, 'localhost') != FALSE) { // local server
  */
 if (strstr($base_url, 'local') == FALSE) { // live server settings
     $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $db_name = '';
+    $user = 'zaheerma_dod';
+    $password = 'G()T6DN,45SK';
+    $db_name = 'zaheerma_deenoduniya2';
 } else { //local server settings
-	$host = '127.0.0.1';
+    $host = '127.0.0.1';
     $user = 'root';
     $password = 'secret';
     $db_name = 'deenoduniya';
-	
 }
 
 //echo $host.' - '.$user.' - '.$password.' - '.$db_name;

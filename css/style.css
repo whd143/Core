@@ -204,16 +204,12 @@ table{
     font-size:12px;
 }
 .voda{
-    float:right;
-    width:520px;
-    height:auto;
-}
-.voda img{
     float:left;
-    margin-right:10px;
+    margin-left: 10px;
 }
-.voda img:nth-child(2n+0){
-    margin-right:0px;
+div#weather{
+    float:left;
+    margin-left: 10px;
 }
 /*************************/
 
@@ -310,7 +306,7 @@ table{
     text-transform:uppercase;
 }
 .ftr h1 a{
-	color:#fff;
+    color:#fff;
 }
 
 .news:nth-child(2n+0) .ftr h1{
@@ -342,7 +338,7 @@ table{
     margin:14px 0 0 0;
 }
 .psts a{
-	 color: #52b5f1;
+    color: #52b5f1;
     float: left;
     margin-top: 10px;
 }
@@ -360,7 +356,7 @@ table{
     float:right;
     font-weight:bold;
     font-size:12px;
-	margin-top:12px;
+    margin-top:12px;
 }
 
 .content_area .sidebar{
@@ -436,8 +432,8 @@ table{
     padding-top:20px;
 }
 .inner img{
-	float:right;
-	margin:5px 0 5px 10px;
+    float:right;
+    margin:5px 0 5px 10px;
 }
 /************************/
 

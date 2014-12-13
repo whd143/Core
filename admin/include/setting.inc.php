@@ -11,11 +11,11 @@ function getBaseURI() {
     );
 }
 
-$base_url = getBaseURI() . '/angular.local';
+$base_url = getBaseURI() . '/demo/admin';
 /**
  * Error / Notice Settings
  */
-if (strstr($base_url, 'local') != FALSE) { // local server
+if (1) { // local server //strstr($base_url, 'local') != FALSE
     error_reporting(E_ALL); // & ~E_NOTICE & ~ E_WARNING
     ini_set('display_errors', 'On');
 }
@@ -25,11 +25,11 @@ if (strstr($base_url, 'local') != FALSE) { // local server
  */
 if (strstr($base_url, 'local') == FALSE) { // live server settings
     $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $db_name = '';
+    $user = 'zaheerma_dod';
+    $password = 'G()T6DN,45SK';
+    $db_name = 'zaheerma_deenoduniya2';
 } else { //local server settings
-	$host = '127.0.0.1';
+    $host = '127.0.0.1';
     $user = 'root';
     $password = 'secret';
     $db_name = 'deenoduniya';
