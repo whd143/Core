@@ -32,7 +32,7 @@ include $include_prefix . "include/header.inc.php";
                                 <tbody>
                                     <?php
                                     $query = "SELECT * FROM `static_page`";
-                                    if(!$result = $sql->query($query)){
+                                    if (!$result = $sql->query($query)) {
                                         dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
                                     }
                                     if ($result->num_rows > 0) {
@@ -40,21 +40,21 @@ include $include_prefix . "include/header.inc.php";
                                             /**
                                              * Make sure string finish with complete word
                                              */
-                                            $description = $record->description_en;
+                                            $description = $record->description_ur;
                                             if (preg_match('/^.{1,210}\b/s', $description, $match)) {
                                                 $description = $match[0];
                                             }
 
                                             echo '<tr class="height60 gradeA">
-                                                <td  class="text-align-left pl20">' . $record->title_en . '</td>
+                                                <td  class="text-align-left pl20">' . $record->title_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $description . '...</td>
                                                 <td class="text-align-center">
-                                                    <a href="'.$base_url.'/static_pages/edit.php?page_id=' . $record->page_id . '">
-                                                        <img src="'.$base_url.'/assets/images/edit-icon.png" />  
+                                                    <a href="' . $base_url . '/static_pages/edit.php?page_id=' . $record->page_id . '">
+                                                        <img src="' . $base_url . '/assets/images/edit-icon.png" />  
                                                     </a>
                                                     &nbsp;
-                                                    <a href="'.$base_url.'/static_pages/delete.php?page_id=' . $record->page_id . '">
-                                                        <img src="'.$base_url.'/assets/images/delete-icon.png" width="17px"/>  
+                                                    <a href="' . $base_url . '/static_pages/delete.php?page_id=' . $record->page_id . '">
+                                                        <img src="' . $base_url . '/assets/images/delete-icon.png" width="17px"/>  
                                                     </a>
                                                 </td>
                                         </tr>';
