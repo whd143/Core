@@ -1,7 +1,7 @@
 <?php
 include "include/header.inc.php";
 include "include/headlines.inc.php";
-include "include/subheader.inc.php";
+//include "include/subheader.inc.php";
 ?>
 
 
@@ -17,7 +17,7 @@ include "include/subheader.inc.php";
             <div class="left">
             	<div class="inner">
                 	
-            		<?php $art_id=$_REQUEST['art_id']; ?>
+            		<?php $art_id=$_REQUEST['article_id']; ?>
                 	
                     <?php 
 						

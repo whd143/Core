@@ -42,7 +42,7 @@ require_once 'include/setting.inc.php';
                         <ul>
                             <li class="<?php echo !isset($_GET['category']) ? 'active':''?>" style="background-image: url('<?php echo $base_url ?>/images/islam.png');">
                                 <a href="<?php echo $base_url ?>">                                
-                                    Main Page
+                                    <span>Main Page</span>
                                 </a>
                             </li>
                             <?php
@@ -58,7 +58,7 @@ require_once 'include/setting.inc.php';
                                         $active_class='active';
                                     }
                                     echo '<li class="'.$active_class.'" style="background-image: url(\''.$record['icon'].'\');">
-                                            <a href="' . $base_url . '/category.php?category=' . $record["slug"] . '">'.$record['title_'.$_SESSION['lang']].'</a>
+                                            <a href="' . $base_url . '/category.php?category=' . $record["slug"] . '"><span>'.$record['title_'.$_SESSION['lang']].'</span></a>
                                     </li>';
                                 }
                             }

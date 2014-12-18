@@ -5,8 +5,8 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous'.  rand(1, 2000);
-    $slug = str_replace(' ', '_', strtolower($title_en).'.html');
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous' . rand(1, 2000);
+    $slug = str_replace(' ', '_', strtolower($title_en) . '.html');
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
     $show_as_menu = isset($_POST['show_as_menu']) ? $_POST['show_as_menu'] : 1;
     $is_active = isset($_POST['is_active']) ? $_POST['is_active'] : 1;
@@ -55,6 +55,32 @@ HDOC;
                                     <div class="controls">
                                         <input type="text" class="input-xlarge " title="Enter page title in english" id="title_en" name="title_en" value="" maxlength="255" />
                                         <span class="mandatory"> * </span>
+                                    </div>
+                                </div>
+
+                                <div class="control-group" style="display:none;">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <label class="control-label" for="icon" >Icon:</label>	
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="file" name="icon" id="icon" allowedWidth="88" allowedHeight="37" />
+                                                <p style="color:#000;font-size:12px;margin-top:9px;">Recommended size (88 X 37)</p>
+                                            </div>
+                                            <div id="uploadPreview" style="color:red;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group" style="display:none;">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <label class="control-label" for="thumb" >Thumb:</label>	
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="file" name="thumb" id="thumb" allowedWidth="201" allowedHeight="91" />
+                                                <p style="color:#000;font-size:12px;margin-top:9px;">Recommended size (201 X 91)</p>
+                                            </div>
+                                            <div id="uploadPreview" style="color:red;"></div>
+                                        </div>
                                     </div>
                                 </div>
 

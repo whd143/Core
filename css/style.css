@@ -94,8 +94,16 @@ table{
 .header nav li a{
     display: block;
     text-transform: uppercase;
-    margin-top:65px;
+    margin-top:0px;
+    line-height: 50px;
 }
+
+.header nav li a span{
+    line-height: 20px;
+    margin-top: 65px;
+    display: inline-block;
+}
+
 .header nav ul li:hover,li.active{
     background: no-repeat scroll #138971;
     background-position-y: 10px;
@@ -451,20 +459,17 @@ div#weather{
     height:auto;
     text-align:center;
 }
+
+.footer a:hover{
+    color:white;
+}
+
+.footer img {
+    vertical-align: bottom;
+}
+
 .clear{
     clear:left;
-}
-.footer li{
-    float:left;
-    border-right:1px solid #fff;
-    color:#fff;
-    font-size:15px;
-    list-style:none;
-    padding:0 15px;
-}
-.footer li strong{
-    float:right;
-    font-weight:bold;
 }
 .footer li:nth-child(3n+0){
     border-right:none;
