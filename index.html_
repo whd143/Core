@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>AlFalah</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/base/advanced-slider-base.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/glossy-square/gray/glossy-square-gray.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/responsive-slider.css" media="screen"/>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.transition.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/jquery.advancedSlider.min.js"></script>
+
+
+<script type="text/javascript">	
+	jQuery(document).ready(function($){
+		$('#responsive-slider').advancedSlider({width: '100%',
+		height: '100%',
+		scaleType: 'outsideFit',
+		skin: 'glossy-square-gray',
+		effectType: 'fade',
+		pauseSlideshowOnHover: true,
+		swipeThreshold: 100,
+		slideButtons: false,
+		thumbnailType: 'scroller',
+		thumbnailButtons: false,
+		thumbnailScrollerResponsive: true,
+		minimumVisibleThumbnails: 2,
+		slideProperties:{
+			0:{captionSize: 35, captionHideEffect: 'slide'},
+			1:{captionPosition: 'custom', captionShowEffect: 'fade', captionHeight: 160, captionLeft: 70, slideshowDelay: 8000},
+			3:{captionSize: 40},
+			5:{captionPosition: 'left', captionSize: 150, captionHideEffect: 'slide'},
+			7:{captionPosition: 'right', captionSize: 150, captionHideEffect: 'slide'}
+		}
+		});
+	});
+	
+	
+</script>
+
+
+</head>
+
+<body>
+
+
+	<!------Header------>
+	<header>
+    	<div id="header-bg">
+        	<div class="header">
+            	<a href="#" class="logo"><img src="images/logo.png"></a>
+            	<nav>
+                	<ul>
+                    	<li class="active"><img src="images/islam.png" /><a href="#">اسلام</a></li>
+                    	<li><img src="images/news.png" /><a href="#">نیوز</a></li>
+                    	<li><img src="images/column.png" /><a href="#">کالم</a></li>
+                    	<li><img src="images/women.png" /><a href="#">ویمنز</a></li>
+                    	<li><img src="images/teacher.png" /><a href="#">اساتذہ</a></li>
+                    	<li><img src="images/article.png" /><a href="#">خصوصی</a></li>
+                    	<li><img src="images/views.png" /><a href="#">فکر</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+	<!------Header------>
+
+	
+       <!------hadees------>
+    	<section id="hadees-bg">
+        	<article class="hadees">
+            	<div class="mubarak-bg">
+                	<div class="mubarak">
+                    	<h1>مبارک حدیث</h1>
+                        <p>ابو Darda (RA) میں آپ کے لئے بہتر تو خرچ کر، صفوں میں اعلی اپنے رب کی عدالت میں سب سے بہترین اور خالص ترین 
+                        اعمال، ہیں جو اس طرح کے ایک  میں آپ کو بتا نہیں ہونا چاہئے "، رسول اللہ (ص) نے کہا کہ نبی سونے اور (اللہ کی راہ میں) 
+                        چاندی، اور اس قتل سے بہتر جنگ کے دوران دشمن کی گردن؟ صحابہ نے کہا، "جی ہاں، اوہ رسول اللہ! (ص). یہ اللہ کے ذکر ہے کہ 
+                        "وہ (ص) نے کہا،". "(ترمذی)
+                        </p>
+                    </div>
+		                    <a href="#">آیات کی قرآن</a>
+                        	<a href="#">زرین</a>
+                        	<span>جمعرات 9<label>اکتوبر 2014</label></span>
+                </div>
+                <div class="voda">
+                	<img src="images/vodafone.png" />
+                    <img src="images/temp.png" />
+                </div>
+            </article>
+		</section>	
+   
+    
+     <!------headlines------>
+    	<section id="headline-bg">
+        	<article class="headline">
+            	<h1> : شہ سرخیوں</h1>
+                <marquee direction="right">وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن</marquee>    		
+            </article>
+		</section>	
+        
+     
+      <!------headlines------>
+    	<section id="content-bg">
+        	<article class="content">
+            	<div class="bayan">
+                	<h1>طارق جمیل کے نئے البیان</h1>
+                    <img src="images/tariqjamil.png">
+                	<p>
+                    	لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا البلاستيكية تحوي مقاطع من هذا النص، وعاد لينتشر مرة أخرى مؤخراَ مع ظهور برامج النشر الإلكتروني مثل "ألدوس بايج مايكر"  والتي حوت أيضاً على نسخ من نص لوريم إيبسوم. 
+                    </p>
+                    <a href="#">تفصیلات ملاحظہ کریں <img src="images/bullet.png"></a>
+                </div>
+                <div class="banner">
+                	
+                    <div class="advanced-slider" id="responsive-slider">
+                        <ul class="slides">
+                            
+                            
+                            <li class="slide rounded-caption">
+                                <img class="image" src="images/kaba.png" alt=""/>
+                                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
+                            </li>
+                       		
+                            <li class="slide rounded-caption">
+                                <img class="image" src="images/kaba.png" alt=""/>
+                                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
+                            </li>
+                            
+                            <li class="slide rounded-caption">
+                                <img class="image" src="images/kaba.png" alt=""/>
+                                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
+                            </li>
+                            
+                            <li class="slide rounded-caption">
+                                <img class="image" src="images/kaba.png" alt=""/>
+                                <img class="thumbnail" src="images/kaba.png" alt="Kaba"/>
+                            </li>
+                            
+                       </ul>
+	</div>
+                    
+                </div>
+                
+                <div class="content_area">
+                	<div class="left">
+ 						
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>ادب</h1>
+                                <img src="images/lit_ftr_img.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>نیوز</h1>
+                                <img src="images/ftr_news.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>لائبریری</h1>
+                                <img src="images/library.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>اساتذہ لائن</h1>
+                                <img src="images/teachers.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>خواتین سیکشن</h1>
+                                <img src="images/womens.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                        <div class="news">
+                        	<div class="ftr">
+                            	<h1>عالم آن لائن</h1>
+                                <img src="images/alim.png">
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt1.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt2.png">
+                                <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                            <div class="psts">
+                            	<img src="images/lt3.png">
+                               <p>یہ نہیں کے فوٹوشاپ کے ورژن ہے. ہمارے الیکٹرانکس یا بیگ مصنف تھانوی.</p>
+                                <span>09/10/2014</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                	<div class="sidebar">
+                    	
+                        <img src="images/adds_01.png">
+                        <img src="images/adds_02.png">
+                        <a href="#">اسلامی نام</a>
+                        <img src="images/adds_03.png">
+                        
+                    </div>
+                </div>
+                
+            </article>
+		</section>	
+    
+        
+        
+     <!------Video------>
+    	<section id="video-bg">
+        	<article class="video">
+            	<div class="links">
+                	<h1>خصوصی لنکس</h1>
+                    <ul>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                	<h1>کالم</h1>
+                    <ul>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    	<li><a href="#">یہاں سرخی آرٹیکل</a></li>
+                    </ul>
+                </div>
+                <div class="videolink">
+                	<img src="images/video.png">
+                </div>
+            </article>
+        </section>
+	<!------Video------>
+
+	
+    <!------Footer------>
+	<footer>
+    	<div id="footer-bg">
+        	<div class="footer">
+            	<li><strong> : ایڈریس </strong>آپ کا ایڈریس یہاں ہے. لاہور، پاکستان.</li>
+            	<li><strong> : فون </strong>024 564 5437</li>
+            	<li><strong> : ای میل </strong>info@alfalah.com</li>
+            	<li>
+                	<a href="#"><img src="images/fb.png"></a>
+                	<a href="#"><img src="images/tw.png"></a>
+                </li>
+                <div class="clear"></div>
+                <p>کاپی رائٹ © 2014 الفلاح، جملہ حقوق محفوظ ہیں</p>
+            </div>
+        </div>
+    </footer>
+	<!------Footer------>
+    
+
+</body>
+</html>

@@ -19,18 +19,39 @@ if (isset($include_prefix)) {
         <meta name="author" content="" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+        <!--File and script for text editor-->
+        <script type="text/javascript" src="<?php echo $base_url ?>/tinymce/js/tinymce/tinymce.min.js"></script>
+     
+        
+        
+        <script type="text/javascript">
+            tinymce.init({
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste "
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+        </script>
+        
+                <!--End of file and script for text editor-->
+        
+        
         <link href="<?php echo $base_url ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/jquery-ui.css" rel="stylesheet" />
-        
+
         <link href="<?php echo $base_url ?>/assets/css/font-awesome.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
         <link href="<?php echo $base_url ?>/assets/css/admin.css" rel="stylesheet" />
         <link href="<?php echo $base_url ?>/assets/css/admin_override.css" rel="stylesheet" />
-
+        
+        
     </head>
     <body>
         <div id="top-strip">

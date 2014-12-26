@@ -1,36 +1,26 @@
 <?php
 include "include/header.inc.php";
 include "include/headlines.inc.php";
-include "include/subheader.inc.php";
 ?>
-
-
 <section id="content-bg">
     <article class="content">
-
-        <?php
-        include "include/featured.inc.php";
-        ?>
-
         <div class="content_area">
-
-            <div class="left">
+            <div class="left" >
                 <div class="inner">
-
-
                     <ul class="pagination">
-
-                        <?php $cat_id = $_REQUEST['cat_id']; ?>
-
+                        <?php $slug = isset($_REQUEST['category']) ? $_REQUEST['category'] : NULL; ?>
                         <?php
-                        $query = 'SELECT * FROM article WHERE category_id="' . $cat_id . '"';
+                        $query = 'SELECT * FROM `article` 
+                                  INNER JOIN `category` ON `category`.`category_id`= `article`.`category_id`
+                                  WHERE `category`.`slug` like "' . $slug . '"';
+
                         if (!$result = $sql->query($query)) {
                             dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
                         }
                         if ($result->num_rows > 0) {
                             while ($record = $result->fetch_array()) {
                                 $active_class = '';
-                                if (isset($_GET['category']) && $record["slug"] == $_GET['category']) {
+                                if ($record["slug"] == $slug) {
                                     $active_class = 'active';
                                 }
                                 echo "<li>";

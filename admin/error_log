@@ -1,0 +1,12 @@
+[13-Dec-2014 03:49:19 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:04 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:06 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:08 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:10 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:23 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 27
+[13-Dec-2014 03:50:52 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 28
+[13-Dec-2014 03:50:53 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 28
+[13-Dec-2014 03:50:56 America/Denver] PHP Parse error:  syntax error, unexpected '$password' (T_VARIABLE) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 28
+[13-Dec-2014 04:00:12 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 40
+[13-Dec-2014 04:01:12 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 41
+[13-Dec-2014 04:01:15 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/include/setting.inc.php on line 41

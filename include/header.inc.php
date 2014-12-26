@@ -14,23 +14,32 @@ require_once 'include/setting.inc.php';
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/base/advanced-slider-base.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/glossy-square/gray/glossy-square-gray.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/responsive-slider.css" media="screen"/>
-
-        <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/override.css" />
-
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo $base_url ?>/js/vticker/jquery.vticker.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo $base_url ?>/css/override.css" />
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.transition.min.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.touchSwipe.min.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.advancedSlider.min.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/functions.js"></script>
         <script type="text/javascript" src="<?php echo $base_url ?>/js/jquery.quick.pagination.min.js"></script>
-		<script type="text/javascript">
-        $(document).ready(function() {
-            $("ul.pagination").quickPagination({pagerLocation:"both",pageSize:"1"});
-        });
-        </script>
+       
     </head>
 
     <body>
+
+        <!--facebook likebox widget-->
+        <div id="fb-root"></div> 
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <!--facebook likebox widget-->
+
         <!------Header------>
         <header>
             <div id="header-bg">
@@ -40,9 +49,9 @@ require_once 'include/setting.inc.php';
                     </a>
                     <nav>
                         <ul>
-                            <li class="<?php echo !isset($_GET['category']) ? 'active':''?>" style="background-image: url('<?php echo $base_url ?>/images/islam.png');">
+                            <li class="<?php echo!isset($_GET['category']) ? 'active' : '' ?>" style="background-image: url('<?php echo $base_url ?>/images/islam.png');">
                                 <a href="<?php echo $base_url ?>">                                
-                                    Main Page
+                                    <span>Main Page</span>
                                 </a>
                             </li>
                             <?php
@@ -53,12 +62,12 @@ require_once 'include/setting.inc.php';
                             if ($result->num_rows > 0) {
 
                                 while ($record = $result->fetch_array()) {
-                                    $active_class='';
-                                    if(isset($_GET['category']) && $record["slug"]==$_GET['category']){
-                                        $active_class='active';
+                                    $active_class = '';
+                                    if (isset($_GET['category']) && $record["slug"] == $_GET['category']) {
+                                        $active_class = 'active';
                                     }
-                                    echo '<li class="'.$active_class.'" style="background-image: url(\''.$record['icon'].'\');">
-                                            <a href="' . $base_url . '/category.php?category=' . $record["slug"] . '">'.$record['title_'.$_SESSION['lang']].'</a>
+                                    echo '<li class="' . $active_class . '" style="background-image: url(\'' . $base_url . $record['icon'] . '\');">
+                                            <a href="' . $base_url . '/category.php?category=' . $record["slug"] . '"><span>' . $record['title_' . $_SESSION['lang']] . '</span></a>
                                     </li>';
                                 }
                             }

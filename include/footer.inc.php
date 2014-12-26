@@ -2,19 +2,30 @@
 <!------Footer------>
 <footer >
     <div id="footer-bg">
-        <div class="footer">
-            <li style="display: none"><strong> : ایڈریس </strong>آپ کا ایڈریس یہاں ہے. لاہور، پاکستان.</li>
-            <li style="display: none"><strong> : فون </strong>024 564 5437</li>
-            <li style="display: none"><strong> : ای میل </strong>info@deen-o-duniya.com</li>
-            <li style="display: none">
-                <a href="javascript:void(0)"><img src="images/fb.png"></a>
-                <a href="javascript:void(0)"><img src="images/tw.png"></a>
-            </li>
-            <div class="clear"></div>
-            <p>کاپی رائٹ © 2014 الفلاح، جملہ حقوق محفوظ ہیں</p>
+        <div  class="footer">
+            <?php
+            $query = "SELECT * FROM `static_page` WHERE `is_active`=1";
+            if (!$result = $sql->query($query)) {
+                dumpSql("Error Running Query : $sql->error" . "<br /><br /><br />" . $query);
+            }
+            if ($result->num_rows > 0) {
+                while ($record = $result->fetch_array()) {
+                    echo '<a href="' . $base_url . '/page.php?slug=' . $record["slug"] . '" style="font-weight:bold;">' . $record['title_' . $_SESSION['lang']] . '</a>';
+                    echo '<span style="color:#fff;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>';
+                }
+            }
+            ?>
+
+            <span ><a href="javascript:void(0);"><img src="images/fb.png" style="vertical-align: middle"></a></span>
+            <a href="javascript:void(0);"><img src="images/tw.png" style="vertical-align: middle"></a> 
+
+
+            <div class="clear"></div> 
+            <br />
+            <div>کاپی رائٹ © 2014 الفلاح، جملہ حقوق محفوظ ہیں</p>
+            </div>
         </div>
-    </div>
-    <div style="clear:both"></div>
+        <div style="clear:both"></div>
 </footer>
 <!------Footer------>
 

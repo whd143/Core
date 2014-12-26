@@ -9,12 +9,12 @@ include "include/subheader.inc.php";
         <?php
         include "include/featured.inc.php";
         ?>
-        <div class="content_area">
+        <div class="content_area" >
             <?php
             include "include/leftpanel.inc.php";
             ?>
-        </div>
-        <?php include "include/sidebar.inc.php"; ?>
+            <?php include "include/sidebar.inc.php"; ?>
+
         </div>
     </article>
 </section>

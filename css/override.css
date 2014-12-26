@@ -14,3 +14,16 @@ and open the template in the editor.
 .show{
     display:inline-block;
 }	
+
+.mubarak-bg{
+    width:518px;
+}
+
+.w258{
+    width:258px;
+}
+
+.round-border{
+    -webkit-border-radius: 5px 5px;
+    border-radius:5px 5px ;
+}

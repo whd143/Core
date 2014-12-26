@@ -1,0 +1,2 @@
+[19-Dec-2014 13:03:44 America/Denver] PHP Notice:  Undefined index: article_id in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/article/categories/add.php on line 29
+[19-Dec-2014 13:18:19 America/Denver] PHP Notice:  Undefined variable: destinaton in /home1/zaheerma/public_html/deenoduniya.com/demo/admin/article/categories/add.php on line 31

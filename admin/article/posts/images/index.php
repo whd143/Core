@@ -50,7 +50,7 @@ if(!isset($_REQUEST['article_id'])){
                                             }
 
                                             echo '<tr class="height60 gradeA">
-                                                <td  class="text-align-center"><img src="' . $thumb . '" style="width:30px;"/></td>
+                                                <td  class="text-align-center"><img src="' . $base_url.$thumb . '" style="width:30px;"/></td>
                                                 <td  class="text-align-left pl20">' . $record->title_ur . '</td>
                                                 <td  class="text-align-left pl20">' . $record->title_en . '</td>    
                                                 <td  class="text-align-center">' . $record->display_order . '</td>

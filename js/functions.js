@@ -5,7 +5,7 @@
  */
 
 
-$(function() {
+$(function () {
 
     if ($('#responsive-slider').length) {
         $('#responsive-slider').advancedSlider({width: '100%',
@@ -31,13 +31,18 @@ $(function() {
     }
 
     if ($('.nice_words').length) {
-        $('.nice_words').on('click', function() {
+        $('.nice_words').on('click', function () {
             $('.mubarak').hide();
             $('.nice_words').removeClass('active');
             $($(this).attr('data-target')).show();
             $(this).addClass('active');
         });
-
     }
 
+    if ($("ul.pagination").length) {
+        $("ul.pagination").quickPagination({pagerLocation: "both", pageSize: "1"});
+    }
+    
+     $('#example').vTicker();
+    
 });

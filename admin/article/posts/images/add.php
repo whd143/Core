@@ -42,7 +42,7 @@ HDOC;
                 exit('Unknown error occured while uploading file');
             }
 
-            $uri = getBaseURI() . $post_destination_path . '/' . $file_new_name;
+            $uri = $post_destination_path . '/' . $file_new_name;
             $query = <<<HDOC
                     UPDATE  `article_image` 
                     SET 
@@ -62,7 +62,7 @@ HDOC;
                 exit('Unknown error occured while uploading file');
             }
 
-            $thumb = getBaseURI() . $post_destination_path . '/' . $file_new_name;
+            $thumb = $post_destination_path . '/' . $file_new_name;
             $query = <<<HDOC
                     UPDATE  `article_image` 
                     SET 

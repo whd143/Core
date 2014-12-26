@@ -5,7 +5,7 @@ include $include_prefix . "include/header.inc.php";
  * form submit action
  */
 if (isset($_POST['submit'])) {
-    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous'.  rand(1, 2000);
+    $title_en = isset($_POST['title_en']) ? $_POST['title_en'] : 'anonymous' . rand(1, 2000);
     $slug = str_replace(' ', '_', strtolower($title_en) . '.html');
     $description_en = isset($_POST['description_en']) ? $_POST['description_en'] : '';
     $title_ur = isset($_POST['title_ur']) ? $_POST['title_ur'] : '';
@@ -30,6 +30,7 @@ HDOC;
                 <div class="panel">
                     <div class="panel-header"><i class="icon-tasks"></i> Static Pages Management</div>
                     <div class="panel-content">
+
                         <form id="frm" name="frm" action="" method="post" enctype="multipart/form-data" class="form-horizontal" >
                             <fieldset>
 
@@ -53,6 +54,14 @@ HDOC;
 
                                 <div class="control-group">
                                     <label class="control-label" for="description_ur">Description (UR) :</label>
+
+                                    <!--Code start for text editor-->
+                                    <form method="post" action="somepage">
+                                        <h6>2</h6>
+                                        <textarea name="content" style="width:100%"></textarea>
+                                    </form>
+                                     <!--End of Code for text editor-->
+
                                     <div class="controls">
                                         <textarea id="description_ur" name="description_ur" title="Enter page description in ur" rows="15" cols="80" style="width: 80%" class="tinymce"></textarea>
                                     </div>

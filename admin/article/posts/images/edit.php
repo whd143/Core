@@ -46,7 +46,7 @@ HDOC;
             if (!move_uploaded_file($_FILES['uri']['tmp_name'], $destination . '/' . $file_new_name)) {
                 exit('Unknown error occured while uploading file');
             }
-            $uri = getBaseURI() . $post_destination_path . '/' . $file_new_name;
+            $uri = $post_destination_path . '/' . $file_new_name;
             $query = <<<HDOC
                     UPDATE  `article_image` 
                     SET 
@@ -70,7 +70,7 @@ HDOC;
                 exit('Unknown error occured while uploading file');
             }
 
-            $thumb = getBaseURI() . $post_destination_path . '/' . $file_new_name;
+            $thumb = $post_destination_path . '/' . $file_new_name;
             $query = <<<HDOC
                     UPDATE  `article_image` 
                     SET 
@@ -156,7 +156,7 @@ HDOC;
                                                 <input type="file" name="uri" id="uri" allowedWidth="371" allowedHeight="376" />
                                             </div>
                                             <div id="uploadPreview" style="color:red;">
-                                                <img src="<?php echo $record->uri; ?>" />
+                                                <img src="<?php echo $base_url.$record->uri; ?>" />
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@ HDOC;
                                                 <input type="file" name="thumb" id="thumb" allowedWidth="371" allowedHeight="376" />
                                             </div>
                                             <div id="uploadPreview" style="color:red;">
-                                                <img src="<?php echo $record->thumb; ?>" />
+                                                <img src="<?php echo $base_url.$record->thumb; ?>" />
                                             </div>
                                         </div>
                                     </div>
